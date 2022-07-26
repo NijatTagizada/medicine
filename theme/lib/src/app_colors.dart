@@ -11,7 +11,10 @@ class AppColorsData extends Equatable {
     required this.green4,
     required this.chartBg,
     required this.grey,
+    required this.grey2,
     required this.black,
+    required this.red,
+    required this.unfocusedInputBorderColor,
   });
 
   factory AppColorsData.light() => const AppColorsData(
@@ -21,7 +24,10 @@ class AppColorsData extends Equatable {
         green4: Color(0xFF67968c),
         chartBg: Color(0xFFf5fafa),
         grey: Color(0xFF535E5C),
+        grey2: Color(0xFFadacac),
         black: Color(0xFF2f3131),
+        red: Color(0xFFf54842),
+        unfocusedInputBorderColor: Color(0xFFBDBDBD),
       );
 
   final Color green;
@@ -30,7 +36,10 @@ class AppColorsData extends Equatable {
   final Color green4;
   final Color chartBg;
   final Color grey;
+  final Color grey2;
   final Color black;
+  final Color red;
+  final Color unfocusedInputBorderColor;
 
   @override
   List<Object?> get props => [
@@ -40,6 +49,9 @@ class AppColorsData extends Equatable {
         green4.named('green4'),
         chartBg.named('chartBg'),
         grey.named('grey'),
+        grey2.named('grey2'),
         black.named('black'),
+        red.named('red'),
+        unfocusedInputBorderColor.named('unfocusedInputBorderColor'),
       ];
 }

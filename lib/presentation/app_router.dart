@@ -1,12 +1,14 @@
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 
-import '../main.dart';
+import 'pages/home/home_page.dart';
+import 'pages/medicine_detail/medicine_detail_page.dart';
 
 final getIt = GetIt.instance;
 
 abstract class AppRoutes {
   static const String home = '/home';
+  static const String medicineDetail = '/medicineDetail';
 }
 
 final appRouter = GoRouter(
@@ -16,7 +18,13 @@ final appRouter = GoRouter(
     GoRoute(
       path: AppRoutes.home,
       builder: (context, state) {
-        return const MyHomePage();
+        return const HomePage();
+      },
+    ),
+    GoRoute(
+      path: AppRoutes.medicineDetail,
+      builder: (context, state) {
+        return const MedicineDetailPage();
       },
     ),
   ],
