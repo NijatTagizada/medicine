@@ -5,7 +5,7 @@ class MedicineResult extends Equatable {
   final Composition composition;
   final Packaging packaging;
   final TradeLabel tradeLabel;
-  final Manufacturer manufacturer;
+  final Manufacturer? manufacturer;
   final String code;
   const MedicineResult({
     required this.id,
@@ -17,7 +17,7 @@ class MedicineResult extends Equatable {
   });
 
   @override
-  List<Object> get props {
+  List<Object?> get props {
     return [
       id,
       composition,
@@ -35,8 +35,8 @@ class Composition extends Equatable {
   final List<String> atc;
   final Inn inn;
   final PharmForm pharmForm;
-  final double dosage;
-  final Measure measure;
+  final double? dosage;
+  final Measure? measure;
 
   const Composition({
     required this.id,
@@ -49,7 +49,7 @@ class Composition extends Equatable {
   });
 
   @override
-  List<Object> get props {
+  List<Object?> get props {
     return [
       id,
       description,
@@ -117,9 +117,10 @@ class Packaging extends Equatable {
   final Composition composition;
   final String description;
   final bool inBulk;
-  final String minimalQuantity;
-  final String packageQuantity;
-  final Variant variant;
+  final String? minimalQuantity;
+  final String? packageQuantity;
+  final Variant? variant;
+
   const Packaging({
     required this.id,
     required this.composition,
@@ -131,7 +132,7 @@ class Packaging extends Equatable {
   });
 
   @override
-  List<Object> get props {
+  List<Object?> get props {
     return [
       id,
       composition,

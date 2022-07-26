@@ -7,11 +7,13 @@ import 'package:responsiveness/responsiveness.dart';
 import 'package:theme/theme.dart';
 
 import 'core/bloc/app_bloc_observer.dart';
+import 'core/di/injection_container.dart' as di;
 import 'presentation/app_router.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
+  await di.init();
 
   BlocOverrides.runZoned(
     () => runApp(const MedicineApp()),

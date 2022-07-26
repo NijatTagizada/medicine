@@ -6,7 +6,9 @@ class MedicineDataModel extends MedicineData {
 
   factory MedicineDataModel.fromJson(Map<String, dynamic> json) {
     return MedicineDataModel(
-      results: json['results'].map((v) => MedicineResultModel.fromJson(v)),
+      results: List<MedicineResultModel>.from(
+        json['results'].map((v) => MedicineResultModel.fromJson(v)),
+      ),
     );
   }
 }

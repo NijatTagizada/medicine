@@ -16,7 +16,9 @@ class MedicineResultModel extends MedicineResult {
       composition: CompositionModel.fromJson(json['composition']),
       packaging: PackagingModel.fromJson(json['packaging']),
       tradeLabel: TradeLabelModel.fromJson(json['trade_label']),
-      manufacturer: ManufacturerModel.fromJson(json['manufacturer']),
+      manufacturer: json['manufacturer'] == null
+          ? null
+          : ManufacturerModel.fromJson(json['manufacturer']),
       code: json['code'],
     );
   }
@@ -41,7 +43,9 @@ class PackagingModel extends Packaging {
       inBulk: json['in_bulk'],
       minimalQuantity: json['minimal_quantity'],
       packageQuantity: json['package_quantity'],
-      variant: VariantModel.fromJson(json['variant']),
+      variant: json['variant'] == null
+          ? null
+          : VariantModel.fromJson(json['variant']),
     );
   }
 }
@@ -93,7 +97,9 @@ class CompositionModel extends Composition {
       inn: InnModel.fromJson(json['inn']),
       pharmForm: PharmFormModel.fromJson(json['pharm_form']),
       dosage: json['dosage'],
-      measure: MeasureModel.fromJson(json['measure']),
+      measure: json['measure'] == null
+          ? null
+          : MeasureModel.fromJson(json['measure']),
     );
   }
 }
