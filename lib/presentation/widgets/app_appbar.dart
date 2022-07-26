@@ -15,7 +15,6 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
     final appTheme = AppTheme.of(context);
 
     return AppBar(
-      centerTitle: false,
       title: Text(
         title,
         style: appTheme.typography.sp20.copyWith(
@@ -24,7 +23,6 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       leadingWidth: 45.w,
-      automaticallyImplyLeading: false,
       titleSpacing: 21.w,
       backgroundColor: appTheme.colors.green2,
     );

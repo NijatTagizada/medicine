@@ -1,4 +1,12 @@
 {
     "@@locale": "en",
-    "homePage": "Home Page"
+    "home": "Home",
+    "search": "Search",
+    "tradeLabel": "Trade Label",
+    "manufacturerName": "Manufacturer name",
+    "medicineDetail": "Medicine Detail",
+    "packagingDescription": "Packaging description",
+    "compositionDescription": "Composition description",
+    "compositionInn": "Composition inn",
+    "compositionPharmForm": "Composition pharm form"
 }
