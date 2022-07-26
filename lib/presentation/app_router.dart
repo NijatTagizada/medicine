@@ -1,6 +1,8 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 
+import 'bloc/medicine/cubit/medicine_cubit.dart';
 import 'pages/home/home_page.dart';
 import 'pages/medicine_detail/medicine_detail_page.dart';
 
@@ -18,7 +20,10 @@ final appRouter = GoRouter(
     GoRoute(
       path: AppRoutes.home,
       builder: (context, state) {
-        return const HomePage();
+        return BlocProvider(
+          create: (context) => getIt.get<MedicineCubit>()..fetchData(),
+          child: const HomePage(),
+        );
       },
     ),
     GoRoute(

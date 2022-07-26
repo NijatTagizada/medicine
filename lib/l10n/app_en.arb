@@ -8,5 +8,6 @@
     "packagingDescription": "Packaging description",
     "compositionDescription": "Composition description",
     "compositionInn": "Composition inn",
-    "compositionPharmForm": "Composition pharm form"
+    "compositionPharmForm": "Composition pharm form",
+    "somethingWentWrong": "Something went wrong"
 }
