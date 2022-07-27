@@ -40,7 +40,7 @@ class MedicineItem extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
           onTap: () {
-            appRouter.push(AppRoutes.medicineDetail);
+            appRouter.push(AppRoutes.medicineDetail, extra: model.id);
           },
           highlightColor: Colors.transparent,
           splashColor: appTheme.colors.green.withOpacity(0.2),

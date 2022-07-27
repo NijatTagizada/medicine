@@ -3,6 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 
 import 'bloc/medicine/medicine_cubit.dart';
+import 'bloc/medicine_detail/medicine_detail_cubit.dart';
 import 'pages/home/home_page.dart';
 import 'pages/medicine_detail/medicine_detail_page.dart';
 
@@ -29,7 +30,13 @@ final appRouter = GoRouter(
     GoRoute(
       path: AppRoutes.medicineDetail,
       builder: (context, state) {
-        return const MedicineDetailPage();
+        final int id = state.extra as int;
+
+        return BlocProvider(
+          create: (context) =>
+              getIt.get<MedicineDetailCubit>(param1: id)..fetchData(),
+          child: const MedicineDetailPage(),
+        );
       },
     ),
   ],
