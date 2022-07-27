@@ -22,8 +22,12 @@ class MedicineRepositoryImpl implements MedicineRepository {
   }
 
   @override
-  Future<Either<Failure, MedicineData>> searchMedicine(String query) {
-    // TODO: implement searchMedicine
-    throw UnimplementedError();
+  Future<Either<Failure, MedicineData>> searchMedicine(String query) async {
+    try {
+      final result = await dataSource.searchMedicine(query);
+      return Success(result);
+    } catch (e) {
+      return Error(Failure(error: e.toString()));
+    }
   }
 }

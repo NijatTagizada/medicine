@@ -7,4 +7,6 @@ abstract class Endpoints {
   static const medicine = '$_v1/medicine/';
 }
 
-abstract class Queries {}
+abstract class Queries {
+  static const search = 'search';
+}

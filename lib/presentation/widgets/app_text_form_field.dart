@@ -9,12 +9,15 @@ class AppTextFormField extends StatefulWidget {
     this.label,
     this.hint,
     this.inputType = TextInputType.text,
+    this.onChanged,
   }) : super(key: key);
 
   final TextEditingController? controller;
   final String? label;
   final String? hint;
   final TextInputType inputType;
+
+  final Function(String)? onChanged;
 
   @override
   State<AppTextFormField> createState() => _AppTextFormFieldState();
@@ -53,6 +56,7 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
         color: appTheme.colors.black,
         fontWeight: FontWeight.w400,
       ),
+      onChanged: widget.onChanged,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.symmetric(
           vertical: 18.h,

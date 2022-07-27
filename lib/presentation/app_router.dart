@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 
-import 'bloc/medicine/cubit/medicine_cubit.dart';
+import 'bloc/medicine/medicine_cubit.dart';
 import 'pages/home/home_page.dart';
 import 'pages/medicine_detail/medicine_detail_page.dart';
 

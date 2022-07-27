@@ -3,11 +3,17 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:responsiveness/responsiveness.dart';
 import 'package:theme/theme.dart';
 
+import '../../../../domain/entities/medicine_result.dart';
 import '../../../app_router.dart';
 import '../../../widgets/title_value_widget.dart';
 
 class MedicineItem extends StatelessWidget {
-  const MedicineItem({Key? key}) : super(key: key);
+  const MedicineItem({
+    Key? key,
+    required this.model,
+  }) : super(key: key);
+
+  final MedicineResult model;
 
   @override
   Widget build(BuildContext context) {
@@ -46,12 +52,14 @@ class MedicineItem extends StatelessWidget {
               children: [
                 TitleValueWidget(
                   title: appLocalization.tradeLabel,
-                  value: "Label name",
+                  value: model.tradeLabel.name,
                 ),
                 SizedBox(height: 20.h),
                 TitleValueWidget(
                   title: appLocalization.manufacturerName,
-                  value: "Lorem ipsum dolor",
+                  value: model.manufacturer != null
+                      ? model.manufacturer!.name
+                      : appLocalization.unknown,
                 ),
               ],
             ),

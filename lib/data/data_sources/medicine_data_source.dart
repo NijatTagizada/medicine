@@ -5,6 +5,7 @@ import '../models/medicine_data_model.dart';
 
 abstract class MedicineDataSource {
   Future<MedicineDataModel> getMedicine();
+  Future<MedicineDataModel> searchMedicine(String query);
 }
 
 class MedicineDataSourceImpl implements MedicineDataSource {
@@ -17,6 +18,17 @@ class MedicineDataSourceImpl implements MedicineDataSource {
   @override
   Future<MedicineDataModel> getMedicine() async {
     final result = await dio.get(Endpoints.medicine);
+    return MedicineDataModel.fromJson(result.data);
+  }
+
+  @override
+  Future<MedicineDataModel> searchMedicine(String query) async {
+    final result = await dio.get(
+      Endpoints.medicine,
+      queryParameters: {
+        Queries.search: query,
+      },
+    );
     return MedicineDataModel.fromJson(result.data);
   }
 }

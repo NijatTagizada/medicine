@@ -9,7 +9,12 @@ abstract class MedicineState extends Equatable {
 
 class MedicineLoading extends MedicineState {}
 
-class MedicineSuccess extends MedicineState {}
+class MedicineSuccess extends MedicineState {
+  final List<MedicineResult> data;
+  const MedicineSuccess({
+    required this.data,
+  });
+}
 
 class MedicineError extends MedicineState {}
 

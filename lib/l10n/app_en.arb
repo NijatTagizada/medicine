@@ -9,5 +9,6 @@
     "compositionDescription": "Composition description",
     "compositionInn": "Composition inn",
     "compositionPharmForm": "Composition pharm form",
-    "somethingWentWrong": "Something went wrong"
+    "somethingWentWrong": "Something went wrong",
+    "unknown":"Unknown"
 }
